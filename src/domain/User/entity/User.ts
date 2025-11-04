@@ -6,3 +6,4 @@ export type UserEntity = {
   cpf:string;
   books?:BookEntity[];
 }
+
