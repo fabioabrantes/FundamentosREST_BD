@@ -3,7 +3,7 @@ import GetUsersAllUseCase from "../domain/User/usecases/getUsersAll.ts"
 class RegisterUserController {
   handle(request:Request, response:Response) {
     const result = GetUsersAllUseCase.execute();
-    response.status(result.status).json(result.users);
+    response.status(result.status).json(result.body);
   }
 }
 

@@ -10,10 +10,6 @@ class DeleteUserController {
     const { id } = request.params as ParamsType;
 
     const result = DeleteUserUseCase.execute(id);
-    if (result.status === 400) {
-      response.status(result.status).json(result.message);
-      return;
-    }
     response.status(result.status).json(result.userDeleted);
     return;
   }

@@ -14,11 +14,7 @@ class UpdateUserController {
     const { id } = request.params as ParamsType;
 
     const result = UpdateUserUseCase.execute(id, { name, cpf });
-    if (result.status === 400) {
-      response.status(result.status).json(result.message);
-      return;
-    }
-    response.status(result.status).json(result.userUpdated);
+       response.status(result.status).json(result.userUpdated);
     return;
   }
 }

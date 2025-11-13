@@ -8,11 +8,8 @@ class GetUserByIdController {
   handle(request: Request, response: Response) {
     const { id } = request.params as ParamsType;
     const result = GetUserByIdUseCase.execute(id);
-    if (result.status === 400) {
-      response.status(result.status).json(result.message);
-      return;
-    }
-    response.status(result.status).json(result.user);
+    
+    response.status(result.status).json(result.body);
     return;
   }
 }
